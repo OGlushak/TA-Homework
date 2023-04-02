@@ -48,7 +48,6 @@ function findMin() {
 findMin()
 
 Task6
-
 function findUnic(arr) {
     for (let a = 0; a < arr.length; a++) {
         for (let b = 0; b < arr.length; b++) {
