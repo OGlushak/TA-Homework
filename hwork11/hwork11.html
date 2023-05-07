@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function updateButton() {
+            const request = new XMLHttpRequest();
+            request.open('GET', 'http://localhost:5000/update-button', true);
+
+            request.onload = function () {
+                if (this.status === 200) {
+                    const responseText = JSON.parse(this.responseText);
+                    const button = document.getElementById('myButton');
+                    button.innerHTML = responseText.message;
+                }
+            };
+
+            request.send();
+        }
+    </script>
+</head>
+
+<body>
+    <button id="myButton" onclick="updateButton()">Vote!</button>
+</body>
+
+</html>
